@@ -1,0 +1,609 @@
+/* App.css */
+:root {
+  --primary-color: #141714;       /* Dark Olive Green */
+  --secondary-color: #FFD700;     /* Golden Yellow */
+  --accent-color: #8B4513;        /* Saddle Brown */
+  --background-color: #F5F5DC;    /* Beige */
+  --text-color: #2D3436;          /* Dark Gray */
+  --text-light: #666666;
+  --success-color: #121412;
+  --error-color: #dc3545;
+}
+
+/* Global Styles */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: var(--primary-color) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: white !important;
+}
+
+.nav-link {
+  color: white !important;
+  margin: 0 1.2rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--secondary-color) !important;
+  transform: translateY(-2px);
+}
+
+/* Recipe Card Styles */
+.recipe-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.recipe-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 24px rgba(62, 142, 65, 0.15);
+}
+
+.card-img-top {
+  height: 240px;
+  object-fit: cover;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.card-body {
+  padding: 1.8rem;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #101110 !important;
+  transform: scale(1.05);
+}
+
+/* Form Styles */
+.form-container {
+  background: white;
+  border-radius: 15px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  margin: 3rem auto;
+}
+
+.form-control {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.9rem 1.2rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(62, 142, 65, 0.25);
+}
+
+/* Profile Page Styles */
+.profile-header {
+  background: white;
+  border-radius: 15px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Contact Page Styles */
+.contact-form .form-control {
+  height: 120px;
+  resize: vertical;
+}
+
+/* Footer Styles */
+/* Footer Styles */
+.footer {
+  background-color: #000; /* Same as navbar */
+  color: #fff;
+  padding: 2.5rem 0;
+  margin-top: auto;
+  border-top: 2px solid var(--secondary-color); /* Golden yellow accent */
+}
+
+.footer p {
+  margin: 0.5rem 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.footer .text-muted {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.footer a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.footer a:hover {
+  opacity: 0.8;
+  color: var(--secondary-color);
+}
+
+.footer .container {
+  text-align: center;
+}
+
+.footer p {
+  margin: 0.4rem 0;
+  color: #fff !important;
+  font-size: 0.9rem;
+}
+
+.footer .text-muted {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.footer p {
+  margin: 0.5rem 0;
+}
+
+.footer .text-muted {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Error Messages */
+.invalid-feedback {
+  color: var(--error-color);
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+}
+
+/* File Upload Styles */
+input[type="file"]::file-selector-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  margin-right: 1rem;
+  transition: all 0.3s ease;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #367C2B;
+  cursor: pointer;
+}
+
+/* Background Texture */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.08;
+  z-index: -1;
+  background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233E8E41' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-nav {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .nav-link {
+    margin: 0.8rem 0;
+  }
+
+  .recipe-card {
+    margin-bottom: 1.8rem;
+  }
+
+  .form-container {
+    padding: 1.8rem;
+  }
+
+  .card-img-top {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+
+  .form-container {
+    margin: 2rem 0;
+    padding: 1.5rem;
+  }
+}
+/* Navbar Styles */
+.navbar {
+  background-color: #000 !important;
+  padding: 1rem 0;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.brand-text {
+  color: #fff !important;
+  background: linear-gradient(to right, #fff 65%, var(--secondary-color) 35%);
+  /* -webkit-background-clip: text; */
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand:hover .brand-text {
+  background: linear-gradient(to right, var(--secondary-color) 65%, #fff 35%);
+}
+
+.nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  margin: 0 1rem;
+  padding: 0.5rem 1rem !important;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--secondary-color) !important;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Mobile Menu Styles */
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+@media (max-width: 992px) {
+  .navbar-nav {
+    padding-top: 1rem;
+  }
+  
+  .nav-link {
+    margin: 0.5rem 0;
+    padding-left: 0 !important;
+  }
+  
+  .nav-link::after {
+    display: none;
+  }
+}
+/* Navbar Brand Text Gradient Fix */
+.navbar-brand .brand-text {
+  background: linear-gradient(to right, #fff 65%, var(--secondary-color) 35%);
+  color: transparent; /* Fallback for non-webkit browsers */
+  display: inline-block;
+  
+  /* Standard syntax */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* Add these for Firefox support */
+  @supports (-moz-appearance:none) {
+    color: var(--secondary-color); /* Fallback color for Firefox */
+    background-image: none;
+  }
+}
+
+/* Hero Slider Styles */
+.hero-slider {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.slider-item {
+  outline: none;
+}
+
+.slider-image {
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.slider-content {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  color: white;
+  max-width: 600px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.slider-content h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.slider-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Dots Customization */
+.slick-dots {
+  bottom: 30px !important;
+}
+
+.slick-dots li button:before {
+  font-size: 12px;
+  color: white;
+}
+
+.slick-dots li.slick-active button:before {
+  color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .slider-image {
+    height: 400px;
+  }
+  
+  .slider-content {
+    bottom: 15%;
+    left: 5%;
+  }
+  
+  .slider-content h2 {
+    font-size: 2rem;
+  }
+  
+  .slider-content p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .slider-image {
+    height: 300px;
+  }
+  
+  .slider-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .slider-content p {
+    font-size: 1rem;
+  }
+}
+/* Add to App.css */
+.slick-slide {
+  transition: opacity 1s ease-in-out !important;
+}
+
+.slick-active {
+  opacity: 1 !important;
+}
+
+.slick-slide:not(.slick-active) {
+  opacity: 0 !important;
+}
+/* Add to App.css */
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.latest-recipes {
+  animation: slideUp 1s ease-out forwards;
+  opacity: 0;
+}
+
+.delay-1 {
+  animation-delay: 0.5s;
+}
+
+.delay-2 {
+  animation-delay: 1s;
+}
+
+/* Add Recipe Section */
+.add-recipe-section {
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.add-recipe-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/food.png');
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.add-recipe-content {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.add-recipe-section h2 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.add-recipe-section .lead {
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+.add-recipe-section .form-control {
+  border: 2px solid #eee;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.add-recipe-section .form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(62, 142, 65, 0.25);
+}
+
+.add-recipe-section img.img-fluid {
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  border: 5px solid white;
+}
+
+/* Animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.add-recipe-section {
+  animation: slideIn 1s ease-out;
+}
+/* Home Page Specific Styles */
+.home-page {
+  overflow-x: hidden;
+}
+
+/* Categories Section */
+.categories-section {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.categories-section h2 {
+  color: var(--primary-color);
+  font-size: 2.2rem;
+}
+
+.btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Recipe Card Enhancements */
+.recipe-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.recipe-card .card-img-top {
+  transition: transform 0.3s ease;
+}
+
+.recipe-card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.recipe-card .card-body {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 70%, rgba(255, 255, 255, 1));
+}
